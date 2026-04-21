@@ -18,7 +18,7 @@ export default function HomePage() {
       <BrandBackground />
       <div className="relative z-10">
         <Navbar />
-        <main className="relative z-10 pt-[68px]">
+        <main className="relative z-10 pt-[112px]">
           <Hero />
           <About />
           <Services className="relative z-10 bg-[#FAFAF5]" />

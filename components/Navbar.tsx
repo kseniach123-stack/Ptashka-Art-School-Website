@@ -28,7 +28,7 @@ export function Navbar() {
       <nav className="ptashka-navbar-row">
         <style>{`
           .ptashka-navbar-row {
-            height: 68px;
+            height: 112px;
             padding: 0 40px;
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -105,6 +105,7 @@ export function Navbar() {
           }
           @media (max-width: 767px) {
             .ptashka-navbar-row {
+              height: 96px;
               grid-template-columns: 1fr auto;
               padding: 0 20px;
             }
@@ -142,7 +143,7 @@ export function Navbar() {
 
         <a href="#top" onClick={closeMenu} style={{ display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Image src="/logo.png" alt="Пташка" width={36} height={62} priority />
+            <Image src="/logo.png" alt="Пташка" width={56} height={96} priority />
           </div>
         </a>
 
