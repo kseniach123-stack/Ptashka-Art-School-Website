@@ -2,6 +2,7 @@
 // Language rule: code comments and technical docs -> English
 //                UI text and user-facing content -> Ukrainian
 import { contactContent, navLinks } from "@/lib/data";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -54,17 +55,8 @@ export function Footer() {
           `}</style>
 
           <div>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-              <BirdLogo />
-              <span
-                style={{
-                  fontFamily: "var(--font-nunito), system-ui, sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
-                }}
-              >
-                Пташка
-              </span>
+            <div style={{ display: "inline-flex", alignItems: "center" }}>
+              <Image src="/logo.png" alt="Пташка" width={36} height={62} />
             </div>
             <p
               style={{
@@ -125,17 +117,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function BirdLogo() {
-  return (
-    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <path
-        d="M7.5 23.5C7.5 15.8 13.8 9.5 21 9.5C26 9.5 30.2 12.2 32 16.5C32.6 18 33 19.6 33 21.3C33 22.5 32.8 23.6 32.5 24.8C34.8 25.2 36.8 27 37.2 29.5C37.6 31.8 36.5 34 34.5 35.2C32.8 36.2 30.5 36.3 28.5 35.5C26.2 36.8 23.4 37.5 20.2 37.5C12.8 37.5 7 31.8 7 24.5C7 24.2 7.2 23.8 7.5 23.5Z"
-        fill="#F5A623"
-      />
-    </svg>
   );
 }
 
