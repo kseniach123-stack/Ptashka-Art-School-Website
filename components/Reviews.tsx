@@ -4,6 +4,7 @@
 "use client";
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { Camera } from "lucide-react";
 import { reviews } from "@/lib/data";
 
 export function Reviews() {
@@ -286,9 +287,34 @@ export function Reviews() {
                 style={{
                   aspectRatio: "1 / 1",
                   borderRadius: 10,
-                  background: tile % 2 === 0 ? "#F1EEE7" : "#FFF1DD",
+                  background: tile % 2 === 0 ? "#FFF3E0" : "#F5F5F0",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 6,
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  transition: "opacity 0.2s",
                 }}
-              />
+                onMouseEnter={(event) => {
+                  event.currentTarget.style.opacity = "0.8";
+                }}
+                onMouseLeave={(event) => {
+                  event.currentTarget.style.opacity = "1";
+                }}
+              >
+                <Camera size={24} color="#F5A623" />
+                <span
+                  style={{
+                    fontFamily: "var(--font-inter), system-ui, sans-serif",
+                    fontSize: 11,
+                    color: "#F5A62380",
+                  }}
+                >
+                  Фото з Instagram
+                </span>
+              </div>
             ))}
           </div>
           <style>{`
@@ -299,6 +325,18 @@ export function Reviews() {
               gap: 8px;
             }
           `}</style>
+          <div
+            style={{
+              marginTop: 8,
+              textAlign: "center",
+              fontFamily: "var(--font-inter), system-ui, sans-serif",
+              fontSize: 13,
+              color: "#888",
+              lineHeight: 1.5,
+            }}
+          >
+            Фотографії завантажуються з Instagram. Натисніть щоб переглянути профіль.
+          </div>
 
           <div style={{ marginTop: 20, textAlign: "center" }}>
             <a
