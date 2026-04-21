@@ -1,0 +1,21 @@
+/* Ptashka Art School — Website */
+/* Language rule: code comments and technical docs -> English */
+/*                UI text and user-facing content -> Ukrainian */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: #1A1A2E;
+  background: #fff;
+}
