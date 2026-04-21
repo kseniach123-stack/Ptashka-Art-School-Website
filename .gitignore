@@ -1,0 +1,30 @@
+# Ptashka Art School - Website
+# Language rule: code comments and technical docs -> English
+#                UI text and user-facing content -> Ukrainian
+
+# Dependencies
+node_modules
+
+# Next.js build output
+.next
+out
+
+# Environment variables - never commit these
+.env
+.env.local
+.env.production
+
+# Netlify
+.netlify
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode
+.idea
+
+# Logs
+*.log
+npm-debug.log*
