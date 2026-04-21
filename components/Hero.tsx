@@ -5,7 +5,6 @@
 import { motion } from "framer-motion";
 
 const brand = {
-  cream: '#FFF8F0',
   orange: '#F5A623',
   teal: '#2BB5A0',
   pink: '#FF7BAC',
@@ -69,8 +68,8 @@ export type HeroProps = {
 
 export function Hero({
   className,
-  subtitleLine1 = "Групи для дітей та дорослих у затишній студії.",
-  subtitleLine2 = "Малюємо, експериментуємо й знаходимо свій стиль разом.",
+  subtitleLine1 = "Онлайн-заняття для дітей, підлітків та дорослих.",
+  subtitleLine2 = "Малюєте вдома — ми поруч у Zoom.",
 }: HeroProps) {
   return (
     <>
@@ -87,7 +86,7 @@ export function Hero({
         style={{
           position: 'relative',
           minHeight: '100svh',
-          background: brand.cream,
+          background: 'transparent',
           overflow: 'hidden',
         }}
       >
@@ -206,6 +205,7 @@ export function Hero({
           style={{
             position: 'relative',
             zIndex: 1,
+            background: 'transparent',
             maxWidth: 720,
             margin: '0 auto',
             minHeight: '100svh',

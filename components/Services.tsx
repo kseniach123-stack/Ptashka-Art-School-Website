@@ -210,6 +210,7 @@ export function Services({
 function ServiceCard({ item }: { item: ServiceItem }) {
   const accent = stripeColor(item.stripe);
   const circleBg = iconCircleBg(item.stripe);
+  const platformTag = item.stripe === "orange" ? "Zoom" : "Google Meet";
 
   return (
     <motion.article
@@ -286,6 +287,23 @@ function ServiceCard({ item }: { item: ServiceItem }) {
         >
           {item.description}
         </p>
+        <span
+          style={{
+            marginTop: 10,
+            display: "inline-flex",
+            alignItems: "center",
+            alignSelf: "flex-start",
+            padding: "4px 10px",
+            borderRadius: 999,
+            background: "#2BB5A018",
+            color: "#2BB5A0",
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+          }}
+        >
+          {platformTag}
+        </span>
         <a
           href="#"
           onClick={(e) => e.preventDefault()}

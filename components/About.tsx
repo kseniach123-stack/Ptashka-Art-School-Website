@@ -1,4 +1,3 @@
- "use client";
 // Ptashka Art School — Website
 // Language rule: code comments and technical docs -> English
 //                UI text and user-facing content -> Ukrainian
@@ -14,9 +13,9 @@ const dashMarks = [
 ] as const;
 
 const defaultParagraphs: [string, string, string] = [
-  "Я вірю, що творчість живе у кожному, якщо дати їй простір і підтримку. На заняттях ми м'яко розкриваємо сміливість пробувати нове, без страху помилитися.",
-  "Пояснюю складне просто: крок за кроком працюємо з формою, кольором і композицією. Учні бачать прогрес вже з перших занять і отримують задоволення від процесу.",
-  "У студії «Пташка» панує тепла атмосфера, де важливий кожен голос. Я допомагаю знайти власний стиль і перетворити ідеї на живі, виразні роботи.",
+  "Я вірю, що творчість живе у кожному, якщо дати їй простір і підтримку. На онлайн-уроках ми м'яко розкриваємо сміливість пробувати нове, без страху помилитися.",
+  "Пояснюю складне просто: крок за кроком працюємо з формою, кольором і композицією. Учні підключаються з дому, бачать прогрес з перших занять і малюють у комфортному темпі.",
+  "Я працюю онлайн із 2020 року, тож до занять легко приєднатися з будь-якого міста чи країни. Допомагаю знайти власний стиль і перетворити ідеї на виразні роботи.",
 ];
 
 export type AboutProps = {
@@ -28,7 +27,7 @@ export type AboutProps = {
 
 export function About({
   className,
-  youtubeVideoId = "Ptashka.school",
+  youtubeVideoId = "UzdcWuuQe50",
   instructorName = "Ім'я",
   paragraphs = defaultParagraphs,
 }: AboutProps) {
@@ -191,7 +190,7 @@ export function About({
               fontSize: 14,
             }}
           >
-            7+ років досвіду
+            7+ років досвіду | Онлайн з 2020
           </div>
         </div>
 
@@ -222,7 +221,7 @@ export function About({
 
           <iframe
             title="YouTube video"
-            src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}`}
+            src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}?rel=0&modestbranding=1`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             style={{

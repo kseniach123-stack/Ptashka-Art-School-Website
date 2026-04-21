@@ -7,30 +7,22 @@ import Image from "next/image";
 import { navLinks } from "@/lib/data";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header
       style={{
-        position: "sticky",
+        position: "fixed",
         top: 0,
+        left: 0,
+        right: 0,
         zIndex: 50,
-        background: isScrolled ? "rgba(255,255,255,0.9)" : "transparent",
-        backdropFilter: isScrolled ? "blur(12px)" : "none",
-        borderBottom: isScrolled ? "1px solid #eee" : "1px solid transparent",
-        transition: "background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease",
+        background: "rgba(255,255,255,0.22)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(255,255,255,0.35)",
       }}
     >
       <nav className="ptashka-navbar-row">

@@ -39,10 +39,10 @@ export type ServiceItem = {
 };
 
 export const services: ServiceItem[] = [
-  { id: "kids-5-10", title: "Діти 5–10 років", icon: "🎨", stripe: "orange", description: "Ігрові заняття для розвитку уяви, дрібної моторики та базових художніх навичок." },
-  { id: "teens-11-17", title: "Підлітки 11–17 років", icon: "✏️", stripe: "teal", description: "Системний розвиток техніки, скетчингу та власного стилю для впевненого самовираження." },
-  { id: "adults", title: "Дорослі", icon: "🖼️", stripe: "teal", description: "Заняття для тих, хто хоче творити для себе, зняти стрес і повернути натхнення в будні." },
-  { id: "entrance-prep", title: "Підготовка до вступу", icon: "🏆", stripe: "orange", description: "Цілеспрямована підготовка портфоліо та практичних робіт до творчих конкурсів і вступу." },
+  { id: "kids-5-10", title: "Діти 5–10 років", icon: "🎨", stripe: "orange", description: "Заняття проходять онлайн у Zoom. Потрібні лише фарби та бажання малювати." },
+  { id: "teens-11-17", title: "Підлітки 11–17 років", icon: "✏️", stripe: "teal", description: "Заняття проходять онлайн у Zoom. Потрібні лише фарби та бажання малювати." },
+  { id: "adults", title: "Дорослі", icon: "🖼️", stripe: "teal", description: "Заняття проходять онлайн у Zoom. Потрібні лише фарби та бажання малювати." },
+  { id: "entrance-prep", title: "Підготовка до вступу", icon: "🏆", stripe: "orange", description: "Заняття проходять онлайн у Zoom. Потрібні лише фарби та бажання малювати." },
 ];
 
 export const pricingPlans = [
@@ -120,5 +120,4 @@ export const reviews = [
 export const contactContent = {
   phone: "+380 (67) 000-00-00",
   email: "hello@ptashka.school",
-  address: "Київ, вул. Творча, 12",
 };

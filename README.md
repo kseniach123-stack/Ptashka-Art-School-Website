@@ -1,7 +1,7 @@
 # 🐦 Ptashka — Art School Website
 
-Landing page and class booking site for Ptashka art school.  
-Built with Next.js 14, TypeScript, Tailwind CSS, Framer Motion.
+Online art school landing page and class booking site.  
+Students join classes via Zoom from anywhere in the world.
 
 ## Tech stack
 - Next.js 14 — App Router

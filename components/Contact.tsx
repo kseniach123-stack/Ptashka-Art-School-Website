@@ -19,10 +19,12 @@ const contactSchema = z.object({
     .regex(phoneRegex, "Некоректний формат телефону"),
   email: z.union([z.literal(""), z.string().trim().email("Некоректний email")]),
   ageGroup: z.enum(["Дитина 5–10 років", "Підліток 11–17 років", "Дорослий"], {
-    errorMap: () => ({ message: "Оберіть вік учня" }),
+    message: "Оберіть вік учня",
   }),
   direction: z.string().min(1, "Оберіть напрямок"),
-  comment: z.string().optional(),
+  platform: z.enum(["Zoom", "Google Meet", "Не має значення"], {
+    message: "Оберіть зручну платформу",
+  }),
   website: z.string().optional(),
 });
 
@@ -52,7 +54,7 @@ export function Contact() {
       email: "",
       ageGroup: undefined,
       direction: "",
-      comment: "",
+      platform: undefined,
       website: "",
     },
   });
@@ -158,7 +160,7 @@ export function Contact() {
                     color: "#1A1A2E",
                   }}
                 >
-                  Дякуємо! Ми зв&#39;яжемось з вами найближчим часом.
+                  Дякуємо! Ми зв&#39;яжемось з вами та надішлемо посилання на Zoom для першого заняття.
                 </p>
               </div>
             ) : (
@@ -204,14 +206,14 @@ export function Contact() {
                 </label>
 
                 <label style={{ display: "grid", gap: 6 }}>
-                  <span style={{ fontSize: 14, color: "#555", fontFamily: "var(--font-inter), system-ui, sans-serif" }}>Коментар (опційно)</span>
-                  <textarea
-                    className="ptashka-contact-input"
-                    rows={3}
-                    placeholder="Розкажіть більше про ваш запит..."
-                    style={{ ...inputBaseStyle, resize: "vertical" }}
-                    {...register("comment")}
-                  />
+                  <span style={{ fontSize: 14, color: "#555", fontFamily: "var(--font-inter), system-ui, sans-serif" }}>Зручна платформа</span>
+                  <select className="ptashka-contact-input" style={inputBaseStyle} defaultValue="" {...register("platform")}>
+                    <option value="" disabled>Оберіть платформу</option>
+                    <option value="Zoom">Zoom</option>
+                    <option value="Google Meet">Google Meet</option>
+                    <option value="Не має значення">Не має значення</option>
+                  </select>
+                  {errors.platform ? <span style={{ color: "#B42318", fontSize: 12 }}>{errors.platform.message}</span> : null}
                 </label>
 
                 {/* Honeypot field */}
@@ -261,26 +263,9 @@ export function Contact() {
               href="https://www.instagram.com/ptashka.school?igsh=MTEweHdybm9qeXNxYQ=="
             />
             <ContactRow icon="▶️" label="YouTube" value="Ptashka.school" href="https://www.youtube.com/@Ptashka.school" />
-            <ContactRow icon="🕐" label="Графік" value="Пн–Пт 10:00–20:00 / Сб 10:00–16:00" />
-
-            <div
-              style={{
-                marginTop: 8,
-                width: "100%",
-                height: 160,
-                borderRadius: 14,
-                background: "#E9E9E9",
-                color: "#666",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                padding: 14,
-                fontFamily: "var(--font-inter), system-ui, sans-serif",
-              }}
-            >
-              📍 Адреса буде додана пізніше
-            </div>
+            <ContactRow icon="🌐" label="Платформа" value="Zoom / Google Meet" />
+            <ContactRow icon="🕐" label="Графік" value="Пн–Пт 10:00–20:00 / Сб 10:00–16:00 (Київ, UTC+2)" />
+            <ContactRow icon="📍" label="Формат" value="Працюємо онлайн — з будь-якої точки світу" />
           </aside>
         </div>
       </div>
