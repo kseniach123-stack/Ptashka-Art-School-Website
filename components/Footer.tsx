@@ -56,7 +56,7 @@ export function Footer() {
 
           <div>
             <div style={{ display: "inline-flex", alignItems: "center" }}>
-              <Image src="/logo.png" alt="Пташка" width={36} height={62} />
+              <Image src="/logo.png" alt="Пташка" width={56} height={96} />
             </div>
             <p
               style={{
