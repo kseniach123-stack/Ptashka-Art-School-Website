@@ -4,7 +4,6 @@
 "use client";
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Camera } from "lucide-react";
 import { reviews } from "@/lib/data";
 
 export function Reviews() {
@@ -40,7 +39,6 @@ export function Reviews() {
     { top: "72%", left: "66%", width: 10, height: 3.5, rotate: -35 },
   ] as const;
 
-  const instagramTiles = Array.from({ length: 6 }, (_, i) => i);
   const slides = emblaApi?.scrollSnapList() ?? [];
 
   return (
@@ -255,112 +253,91 @@ export function Reviews() {
             marginTop: 40,
             background: "#FFFFFF",
             borderRadius: 20,
-            padding: 28,
+            padding: 40,
+            textAlign: "center",
+            border: "1px solid #F5A62320",
           }}
         >
-          <h3
+          <div
             style={{
-              margin: 0,
+              width: 64,
+              height: 64,
+              borderRadius: 16,
+              background: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
               display: "flex",
               alignItems: "center",
-              gap: 10,
-              fontFamily: "var(--font-nunito), system-ui, sans-serif",
+              justifyContent: "center",
+              margin: "0 auto 20px",
+            }}
+          >
+            <InstagramIcon size={32} color="white" />
+          </div>
+
+          <h3
+            style={{
+              fontFamily: "Nunito, sans-serif",
               fontSize: 24,
               fontWeight: 800,
               color: "#1A1A2E",
+              margin: "0 0 12px",
             }}
           >
-            <span aria-hidden>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="5" stroke="#2BB5A0" strokeWidth="2" />
-                <circle cx="12" cy="12" r="4.5" stroke="#2BB5A0" strokeWidth="2" />
-                <circle cx="17.5" cy="6.5" r="1" fill="#2BB5A0" />
-              </svg>
-            </span>
             Наші роботи в Instagram
           </h3>
 
-          <div className="ptashka-insta-grid">
-            {instagramTiles.map((tile) => (
-              <div
-                key={tile}
-                style={{
-                  aspectRatio: "1 / 1",
-                  borderRadius: 10,
-                  background: tile % 2 === 0 ? "#FFF3E0" : "#F5F5F0",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 6,
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  transition: "opacity 0.2s",
-                }}
-                onMouseEnter={(event) => {
-                  event.currentTarget.style.opacity = "0.8";
-                }}
-                onMouseLeave={(event) => {
-                  event.currentTarget.style.opacity = "1";
-                }}
-              >
-                <Camera size={24} color="#F5A623" />
-                <span
-                  style={{
-                    fontFamily: "var(--font-inter), system-ui, sans-serif",
-                    fontSize: 11,
-                    color: "#F5A62380",
-                  }}
-                >
-                  Фото з Instagram
-                </span>
-              </div>
-            ))}
-          </div>
-          <style>{`
-            .ptashka-insta-grid {
-              margin-top: 16px;
-              display: grid;
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              gap: 8px;
-            }
-          `}</style>
-          <div
+          <p
             style={{
-              marginTop: 8,
-              textAlign: "center",
-              fontFamily: "var(--font-inter), system-ui, sans-serif",
-              fontSize: 13,
-              color: "#888",
+              fontFamily: "Inter, sans-serif",
+              fontSize: 16,
+              color: "#666",
               lineHeight: 1.5,
+              maxWidth: 400,
+              margin: "0 auto 28px",
             }}
           >
-            Фотографії завантажуються з Instagram. Натисніть щоб переглянути профіль.
-          </div>
+            Слідкуйте за нашими учнями та їхніми роботами. Нові публікації щотижня.
+          </p>
 
-          <div style={{ marginTop: 20, textAlign: "center" }}>
-            <a
-              href="https://www.instagram.com/ptashka.school?igsh=MTEweHdybm9qeXNxYQ=="
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "2px solid #2BB5A0",
-                color: "#2BB5A0",
-                borderRadius: 24,
-                padding: "10px 24px",
-                textDecoration: "none",
-                fontFamily: "var(--font-inter), system-ui, sans-serif",
-                fontWeight: 600,
-              }}
-            >
-              Відкрити Instagram @Ptashka.school
-            </a>
-          </div>
+          <a
+            href="https://www.instagram.com/Ptashka.school"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "#F5A623",
+              color: "#412402",
+              borderRadius: 28,
+              padding: "12px 32px",
+              fontFamily: "Nunito, sans-serif",
+              fontWeight: 800,
+              fontSize: 16,
+              textDecoration: "none",
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={(event) => {
+              event.currentTarget.style.opacity = "0.85";
+            }}
+            onMouseLeave={(event) => {
+              event.currentTarget.style.opacity = "1";
+            }}
+          >
+            <InstagramIcon size={18} color="#412402" />
+            Відкрити @Ptashka.school
+          </a>
         </div>
       </div>
     </section>
+  );
+}
+
+function InstagramIcon({ size, color }: { size: number; color: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke={color} strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="4.2" stroke={color} strokeWidth="1.8" />
+      <circle cx="17.5" cy="6.5" r="1.1" fill={color} />
+    </svg>
   );
 }
